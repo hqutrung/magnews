@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use Illuminate\Support\Facades\Route;
+
+Route::group(['namespace' => 'Frontend',], function () {
+    Route::group(['prefix' => '/'], function () {
+        Route::get('', 'HomeController@index')->name('home.index');
+    });
+    Route::group(['prefix' => 'category'], function () {
+        Route::get('', 'CategoryController@index')->name('category.index');
+    });
 });
