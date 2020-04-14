@@ -248,7 +248,6 @@
                 } else {
                     count++;
                 }
-
                 console.log($(data[count]).text());
 
                 $(slideTxt).append($(data[count]).clone());

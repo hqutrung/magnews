@@ -40,6 +40,9 @@ class AdminCategoryController extends Controller
         $data->c_slug = Str::slug($request->c_name);
         $data->c_description = $request->c_description;
         $data->c_active = $request->c_active ? 1 : 0;
+        $data->c_hot = $request->c_hot ? 1 : 0;
+        $data->c_parent_id = $request->c_parent_id;
+        $data->c_show_home = $request->c_show_home ? 1 : 0;
         $data->save();
         return redirect()->back();
     }
@@ -88,5 +91,4 @@ class AdminCategoryController extends Controller
         $this->insertOrUpdate($request, $id);
         return redirect()->back();
     }
-
 }

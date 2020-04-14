@@ -28,6 +28,7 @@ class AdminPostController extends Controller
         $categories = Category::all();
         $viewdata = [
             'categories' => $categories,
+            
         ];
         return view('admin::posts.create', $viewdata);
     }
